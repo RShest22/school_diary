@@ -6,6 +6,7 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Настройки'),
@@ -16,16 +17,53 @@ class UserProfile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
+            _UserInfo(),
             SizedBox(height: 20),
-            _UserAvatar(),
-            SizedBox(height: 20),
-            _UserNameWidget(),
-            SizedBox(height: 10),
-            _UserPhoneWidget(),
-            SizedBox(height: 10),
-            _UserNickNameWidget()
+            _BlocMenuWidget(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _BlocMenuWidget extends StatelessWidget {
+  const _BlocMenuWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [],
+      ),
+    );
+  }
+}
+
+class _UserInfo extends StatelessWidget {
+  const _UserInfo();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      color: Colors.white,
+      child: Column(
+        children: const [
+          SizedBox(height: 20),
+          _UserAvatar(),
+          SizedBox(height: 20),
+          _UserNameWidget(),
+          SizedBox(height: 10),
+          _UserPhoneWidget(),
+          SizedBox(height: 10),
+          _UserNickNameWidget(),
+          SizedBox(height: 10),
+        ],
       ),
     );
   }
