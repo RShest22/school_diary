@@ -8,20 +8,112 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        centerTitle: true,
+        //centerTitle: true,
         title: const Text('Настройки'),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
             _UserInfo(),
-            SizedBox(height: 20),
+            SizedBox(height: 5),
             _BlocMenuWidget(),
+            SizedBox(height: 5),
+            _BlocMenuWidgetSecond(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _BlocMenuWidgetSecond extends StatelessWidget {
+  const _BlocMenuWidgetSecond();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.notifications),
+                SizedBox(width: 20),
+                Expanded(child: Text('Уведомления и звуки')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.privacy_tip),
+                SizedBox(width: 20),
+                Expanded(child: Text('Конфиденциальность')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.date_range),
+                SizedBox(width: 20),
+                Expanded(child: Text('Данные и память')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.brush),
+                SizedBox(width: 20),
+                Expanded(child: Text('Оформление')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.language),
+                SizedBox(width: 20),
+                Expanded(child: Text('Язык')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -38,7 +130,65 @@ class _BlocMenuWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [],
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.favorite_border_rounded),
+                SizedBox(width: 20),
+                Expanded(child: Text('Избранное')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.call),
+                SizedBox(width: 20),
+                Expanded(child: Text('Недавние звонки')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.computer),
+                SizedBox(width: 20),
+                Expanded(child: Text('Устройства')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+          const Divider(
+            height: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                Icon(Icons.folder),
+                SizedBox(width: 20),
+                Expanded(child: Text('Папки с чатами')),
+                Icon(Icons.chevron_right),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
